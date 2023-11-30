@@ -1,7 +1,7 @@
-CC := /opt/wasi-sdk/bin/clang
+CC := /c/dev/wasm_testing/wasi-sdk/bin/clang
 
 # Flags to pass to compiler
-CFLAGS :=  --target=wasm32-wasi --sysroot=/home/swadical/wasi-sysroot/sysroot -O3 -Wl,-z,stack-size=6000000,--allow-undefined,-export-dynamic -fvisibility=hidden
+CFLAGS :=  --target=wasm32-wasi --sysroot=/c/dev/wasm_testing/wasi-sdk/share/wasi-sysroot -O3 -Wl,-z,stack-size=6000000,--allow-undefined,-export-dynamic -fvisibility=hidden
 
 bindgen:
 	lua-webidl re.idl bindings.cpp re.h --libmode --cpp
